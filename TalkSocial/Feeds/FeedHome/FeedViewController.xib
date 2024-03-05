@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="TalkSocial" customModuleProvider="target">
+            <connections>
+                <outlet property="headerHeightConstraint" destination="hC0-eD-el2" id="kVW-8o-FPf"/>
+                <outlet property="tableView" destination="ln7-sx-Qd1" id="XbU-eH-tWV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-Gf-MTc" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-PG-UcX">
+                            <rect key="frame" x="16" y="59" width="361" height="60"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaF-Ga-RGX" userLabel="LogoContainer">
+                                    <rect key="frame" x="0.0" y="9" width="361" height="51"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="TalkSocial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaY-nM-pPX">
+                                            <rect key="frame" x="0.0" y="0.0" width="194" height="51"/>
+                                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="40"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="SaY-nM-pPX" firstAttribute="leading" secondItem="ZaF-Ga-RGX" secondAttribute="leading" id="MLb-L2-0NC"/>
+                                        <constraint firstAttribute="trailing" secondItem="SaY-nM-pPX" secondAttribute="trailing" constant="16" id="fRj-jS-k6T"/>
+                                        <constraint firstItem="SaY-nM-pPX" firstAttribute="top" secondItem="ZaF-Ga-RGX" secondAttribute="top" id="fjL-P9-4r3"/>
+                                        <constraint firstAttribute="bottom" secondItem="SaY-nM-pPX" secondAttribute="bottom" id="hUz-He-qfu"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ZaF-Ga-RGX" secondAttribute="bottom" id="8Xj-tV-5iu"/>
+                                <constraint firstAttribute="trailing" secondItem="ZaF-Ga-RGX" secondAttribute="trailing" id="AC5-jP-jjH"/>
+                                <constraint firstItem="ZaF-Ga-RGX" firstAttribute="leading" secondItem="gpe-PG-UcX" secondAttribute="leading" id="Z5x-t3-1UM"/>
+                                <constraint firstAttribute="height" constant="60" id="hC0-eD-el2"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="ZgC-Cn-g9m"/>
+                    <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="gpe-PG-UcX" firstAttribute="leading" secondItem="ZgC-Cn-g9m" secondAttribute="leading" constant="16" id="DFb-S5-raJ"/>
+                        <constraint firstAttribute="bottom" secondItem="gpe-PG-UcX" secondAttribute="bottom" id="i4A-Py-NCC"/>
+                        <constraint firstItem="gpe-PG-UcX" firstAttribute="top" secondItem="ZgC-Cn-g9m" secondAttribute="top" id="io9-IT-Ls8"/>
+                        <constraint firstItem="ZgC-Cn-g9m" firstAttribute="trailing" secondItem="gpe-PG-UcX" secondAttribute="trailing" constant="16" id="piI-JI-07e"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-sx-Qd1">
+                    <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ln7-sx-Qd1" secondAttribute="trailing" id="FtG-aK-TvK"/>
+                <constraint firstItem="OfS-Gf-MTc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sqn-fC-E6O"/>
+                <constraint firstItem="ln7-sx-Qd1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZIX-jV-NMv"/>
+                <constraint firstAttribute="trailing" secondItem="OfS-Gf-MTc" secondAttribute="trailing" id="cji-dU-Zce"/>
+                <constraint firstItem="ln7-sx-Qd1" firstAttribute="top" secondItem="OfS-Gf-MTc" secondAttribute="bottom" id="htG-B7-Nrk"/>
+                <constraint firstItem="OfS-Gf-MTc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qq2-OS-KQV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ln7-sx-Qd1" secondAttribute="bottom" id="tGM-Rp-xfM"/>
+            </constraints>
+            <point key="canvasLocation" x="72.51908396946564" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

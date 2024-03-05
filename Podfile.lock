@@ -1,0 +1,48 @@
+PODS:
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.2)
+  - PINRemoteImage (3.0.3):
+    - PINRemoteImage/PINCache (= 3.0.3)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
+  - Realm (10.47.0):
+    - Realm/Headers (= 10.47.0)
+  - Realm/Headers (10.47.0)
+  - RealmSwift (10.47.0):
+    - Realm (= 10.47.0)
+  - ToastViewSwift (2.1.2)
+
+DEPENDENCIES:
+  - PINRemoteImage
+  - RealmSwift (~> 10)
+  - ToastViewSwift
+
+SPEC REPOS:
+  trunk:
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - Realm
+    - RealmSwift
+    - ToastViewSwift
+
+SPEC CHECKSUMS:
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: daa34d4aa1d8449089be7d405b9d974abc4724c6
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
+  Realm: e43fb540ae947497e3ea8a662443256920602060
+  RealmSwift: 8b06ed06b5d16749ae0c4d91c0cba414a9e28189
+  ToastViewSwift: 62e4c54cd482dd1106c2b2224103a8b171763cf3
+
+PODFILE CHECKSUM: 667de401a8ffc0f94b2556099c4590b7f3dfcd9d
+
+COCOAPODS: 1.13.0
