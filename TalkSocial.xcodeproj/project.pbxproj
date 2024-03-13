@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		9C30BA0D20F2CBE42D5FD5C0 /* Pods_TalkSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A5A1FED943C7C061025F62 /* Pods_TalkSocial.framework */; };
+		BF3B83102B9F3260002AAE45 /* LocalFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B82FF2B9F3260002AAE45 /* LocalFileLoader.swift */; };
+		BF3B83112B9F3260002AAE45 /* LocalFileLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83002B9F3260002AAE45 /* LocalFileLocator.swift */; };
+		BF3B83122B9F3260002AAE45 /* LocalFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83012B9F3260002AAE45 /* LocalFileReader.swift */; };
+		BF3B83132B9F3260002AAE45 /* LocalFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83022B9F3260002AAE45 /* LocalFileWriter.swift */; };
+		BF3B83142B9F3260002AAE45 /* MetaFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83032B9F3260002AAE45 /* MetaFileData.swift */; };
+		BF3B83152B9F3260002AAE45 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83052B9F3260002AAE45 /* AsyncOperation.swift */; };
+		BF3B83162B9F3260002AAE45 /* ByteRangeOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83062B9F3260002AAE45 /* ByteRangeOperationFactory.swift */; };
+		BF3B83172B9F3260002AAE45 /* ContentRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83072B9F3260002AAE45 /* ContentRequestOperation.swift */; };
+		BF3B83182B9F3260002AAE45 /* DataRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83082B9F3260002AAE45 /* DataRequestOperation.swift */; };
+		BF3B83192B9F3260002AAE45 /* LocalDataRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B83092B9F3260002AAE45 /* LocalDataRequestOperation.swift */; };
+		BF3B831A2B9F3260002AAE45 /* OperationResponseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B830A2B9F3260002AAE45 /* OperationResponseAdapter.swift */; };
+		BF3B831B2B9F3260002AAE45 /* RemoteDataRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B830B2B9F3260002AAE45 /* RemoteDataRequestOperation.swift */; };
+		BF3B831C2B9F3260002AAE45 /* VividExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B830D2B9F3260002AAE45 /* VividExtensions.swift */; };
+		BF3B831D2B9F3260002AAE45 /* VividAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B830E2B9F3260002AAE45 /* VividAsset.swift */; };
 		BF55D6DD2B8C889A00B87A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D6DC2B8C889A00B87A06 /* AppDelegate.swift */; };
 		BF55D6DF2B8C889A00B87A06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D6DE2B8C889A00B87A06 /* SceneDelegate.swift */; };
 		BF55D6E12B8C889A00B87A06 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D6E02B8C889A00B87A06 /* RootViewController.swift */; };
@@ -60,6 +74,20 @@
 		16A940A09FA2688E17339687 /* Pods-TalkSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkSocial.release.xcconfig"; path = "Target Support Files/Pods-TalkSocial/Pods-TalkSocial.release.xcconfig"; sourceTree = "<group>"; };
 		74A5A1FED943C7C061025F62 /* Pods_TalkSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalkSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF988DF7C50B31553615C88 /* Pods-TalkSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkSocial.debug.xcconfig"; path = "Target Support Files/Pods-TalkSocial/Pods-TalkSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		BF3B82FF2B9F3260002AAE45 /* LocalFileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileLoader.swift; sourceTree = "<group>"; };
+		BF3B83002B9F3260002AAE45 /* LocalFileLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileLocator.swift; sourceTree = "<group>"; };
+		BF3B83012B9F3260002AAE45 /* LocalFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileReader.swift; sourceTree = "<group>"; };
+		BF3B83022B9F3260002AAE45 /* LocalFileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileWriter.swift; sourceTree = "<group>"; };
+		BF3B83032B9F3260002AAE45 /* MetaFileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaFileData.swift; sourceTree = "<group>"; };
+		BF3B83052B9F3260002AAE45 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		BF3B83062B9F3260002AAE45 /* ByteRangeOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByteRangeOperationFactory.swift; sourceTree = "<group>"; };
+		BF3B83072B9F3260002AAE45 /* ContentRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRequestOperation.swift; sourceTree = "<group>"; };
+		BF3B83082B9F3260002AAE45 /* DataRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestOperation.swift; sourceTree = "<group>"; };
+		BF3B83092B9F3260002AAE45 /* LocalDataRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataRequestOperation.swift; sourceTree = "<group>"; };
+		BF3B830A2B9F3260002AAE45 /* OperationResponseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationResponseAdapter.swift; sourceTree = "<group>"; };
+		BF3B830B2B9F3260002AAE45 /* RemoteDataRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataRequestOperation.swift; sourceTree = "<group>"; };
+		BF3B830D2B9F3260002AAE45 /* VividExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VividExtensions.swift; sourceTree = "<group>"; };
+		BF3B830E2B9F3260002AAE45 /* VividAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VividAsset.swift; sourceTree = "<group>"; };
 		BF55D6D92B8C889A00B87A06 /* TalkSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF55D6DC2B8C889A00B87A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF55D6DE2B8C889A00B87A06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +167,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF3B83042B9F3260002AAE45 /* LocalFileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				BF3B82FF2B9F3260002AAE45 /* LocalFileLoader.swift */,
+				BF3B83002B9F3260002AAE45 /* LocalFileLocator.swift */,
+				BF3B83012B9F3260002AAE45 /* LocalFileReader.swift */,
+				BF3B83022B9F3260002AAE45 /* LocalFileWriter.swift */,
+				BF3B83032B9F3260002AAE45 /* MetaFileData.swift */,
+			);
+			path = LocalFileLoader;
+			sourceTree = "<group>";
+		};
+		BF3B830C2B9F3260002AAE45 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				BF3B83052B9F3260002AAE45 /* AsyncOperation.swift */,
+				BF3B83062B9F3260002AAE45 /* ByteRangeOperationFactory.swift */,
+				BF3B83072B9F3260002AAE45 /* ContentRequestOperation.swift */,
+				BF3B83082B9F3260002AAE45 /* DataRequestOperation.swift */,
+				BF3B83092B9F3260002AAE45 /* LocalDataRequestOperation.swift */,
+				BF3B830A2B9F3260002AAE45 /* OperationResponseAdapter.swift */,
+				BF3B830B2B9F3260002AAE45 /* RemoteDataRequestOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		BF3B830F2B9F3260002AAE45 /* VividLoader */ = {
+			isa = PBXGroup;
+			children = (
+				BF3B83042B9F3260002AAE45 /* LocalFileLoader */,
+				BF3B830C2B9F3260002AAE45 /* Operations */,
+				BF3B830D2B9F3260002AAE45 /* VividExtensions.swift */,
+				BF3B830E2B9F3260002AAE45 /* VividAsset.swift */,
+			);
+			path = VividLoader;
+			sourceTree = "<group>";
+		};
 		BF55D6D02B8C889A00B87A06 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +231,7 @@
 				BF55D6F22B8DF61400B87A06 /* Feeds */,
 				BF8E51B52B9396BD00DE294B /* Profile */,
 				BF55D6DE2B8C889A00B87A06 /* SceneDelegate.swift */,
+				BF3B830F2B9F3260002AAE45 /* VividLoader */,
 				BF55D6DC2B8C889A00B87A06 /* AppDelegate.swift */,
 				BF8E52012B96E82900DE294B /* VideoView.swift */,
 				BF55D6E02B8C889A00B87A06 /* RootViewController.swift */,
@@ -425,6 +491,8 @@
 			files = (
 				BF8E51A62B90C81400DE294B /* Cache.swift in Sources */,
 				BF55D6F12B8C900200B87A06 /* TabBarViewController.swift in Sources */,
+				BF3B83102B9F3260002AAE45 /* LocalFileLoader.swift in Sources */,
+				BF3B83152B9F3260002AAE45 /* AsyncOperation.swift in Sources */,
 				BF8E519F2B90C81400DE294B /* WebError.swift in Sources */,
 				BF8E51AE2B93724600DE294B /* ExpandableLabels.swift in Sources */,
 				BF8E51C22B939C7200DE294B /* ProfileHeaderView.swift in Sources */,
@@ -434,16 +502,24 @@
 				BF8E52072B97505A00DE294B /* NoPostCell.swift in Sources */,
 				BF8E51B22B938F5700DE294B /* FeedDetailViewController.swift in Sources */,
 				BF8E52022B96E82900DE294B /* VideoView.swift in Sources */,
+				BF3B83192B9F3260002AAE45 /* LocalDataRequestOperation.swift in Sources */,
 				BF8E51A32B90C81400DE294B /* Resource.swift in Sources */,
 				BF8E51B82B9399E600DE294B /* ProfileViewController.swift in Sources */,
+				BF3B83142B9F3260002AAE45 /* MetaFileData.swift in Sources */,
 				BF8E51F02B965E1000DE294B /* FeedPostService.swift in Sources */,
+				BF3B83132B9F3260002AAE45 /* LocalFileWriter.swift in Sources */,
+				BF3B83162B9F3260002AAE45 /* ByteRangeOperationFactory.swift in Sources */,
 				BF8E51F82B96D98C00DE294B /* FeedDetailViewModel.swift in Sources */,
 				BF8E51A82B90C81400DE294B /* WebClient.swift in Sources */,
 				BF8E51F62B969FEC00DE294B /* FeedViewModel.swift in Sources */,
+				BF3B83172B9F3260002AAE45 /* ContentRequestOperation.swift in Sources */,
+				BF3B831A2B9F3260002AAE45 /* OperationResponseAdapter.swift in Sources */,
 				BF8E520A2B97516E00DE294B /* UserProfileViewModel.swift in Sources */,
 				BF8E51A12B90C81400DE294B /* CachedWebClient.swift in Sources */,
+				BF3B83182B9F3260002AAE45 /* DataRequestOperation.swift in Sources */,
 				BF8E51FE2B96DAC800DE294B /* ProfileService.swift in Sources */,
 				BF8E51FA2B96D9B100DE294B /* ViewControllerFactory.swift in Sources */,
+				BF3B83122B9F3260002AAE45 /* LocalFileReader.swift in Sources */,
 				BF55D6FA2B8DFA9A00B87A06 /* FeedViewCell.swift in Sources */,
 				BF55D6F52B8DF63C00B87A06 /* FeedViewController.swift in Sources */,
 				BF8E51FC2B96DA0200DE294B /* UserModel.swift in Sources */,
@@ -452,11 +528,15 @@
 				BF8E51EC2B96331E00DE294B /* FeedService.swift in Sources */,
 				BF8E51F32B968FE200DE294B /* LoadingViewCell.swift in Sources */,
 				BF8E51A02B90C81400DE294B /* CacheItem.swift in Sources */,
+				BF3B831D2B9F3260002AAE45 /* VividAsset.swift in Sources */,
 				BF8E51A52B90C81400DE294B /* Path.swift in Sources */,
 				BF8E52002B96E7CD00DE294B /* Extensions.swift in Sources */,
 				BF8E51E92B94CCC200DE294B /* FeedModel.swift in Sources */,
 				BF55D6DD2B8C889A00B87A06 /* AppDelegate.swift in Sources */,
+				BF3B831C2B9F3260002AAE45 /* VividExtensions.swift in Sources */,
+				BF3B83112B9F3260002AAE45 /* LocalFileLocator.swift in Sources */,
 				BF55D6DF2B8C889A00B87A06 /* SceneDelegate.swift in Sources */,
+				BF3B831B2B9F3260002AAE45 /* RemoteDataRequestOperation.swift in Sources */,
 				BF8E51BC2B939A7500DE294B /* UserPostsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

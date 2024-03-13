@@ -195,21 +195,38 @@ class VideoView: UIView {
         
         // MARK: - AVPlayer
         player = AVPlayer(url: url)
-        player?.allowsExternalPlayback = false
+        setup()
+    }
+    
+    func setItem(_ asset: AVURLAsset, thumbnailUrl: URL?) {
+        removeObservers()
+        self.thumbnailView?.pin_setImage(from: thumbnailUrl)
+        self.thumbnailView?.isHidden = false
+        let playerItem = AVPlayerItem(asset: asset)
+        if let player  {
+            player.replaceCurrentItem(with: playerItem)
+        } else {
+            self.player = AVPlayer(playerItem: playerItem)
+        }
         player?.rate = 1.0
+        player?.pause()
+        setup()
+    }
+    
+    private func setup() {
+        player?.allowsExternalPlayback = false
         player?.isMuted = self.isMuted
         
         // MARK: - AVPlayerLayer
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.frame = bounds
-        playerLayer?.videoGravity = videoGravity
-        
+        if playerLayer == nil{
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer?.frame = bounds
+            playerLayer?.videoGravity = videoGravity
+        }
         if playerLayer?.superlayer != layer {
             // Add the AVPlayerLayer to this view's layer
             layer.addSublayer(playerLayer!)
         }
-        self.thumbnailView?.pin_setImage(from: thumbnailUrl)
-        self.thumbnailView?.isHidden = false
         showLoading()
         addObservers()
     }
@@ -235,6 +252,7 @@ class VideoView: UIView {
     func pause() {
         player?.pause()
     }
+
     @objc func videoDidEnd(_ sender: Notification) {
         // Execute the following if 'isLoopEnabled' is TRUE
         guard isLoopEnabled == true else {

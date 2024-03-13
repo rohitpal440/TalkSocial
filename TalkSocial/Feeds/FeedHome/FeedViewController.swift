@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ZFPlayer
 import ToastViewSwift
 
 class FeedViewController: UIViewController{
@@ -54,12 +53,23 @@ class FeedViewController: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 620
+        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         self.previousScrollViewHeight = self.tableView.contentSize.height
         subscribeObservable()
         viewModel?.viewLoaded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playVideoInMostVisibleCell()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        pauseAnyMedia()
     }
     
     @objc private func refreshData(_ sender: Any) {
@@ -72,6 +82,7 @@ class FeedViewController: UIViewController{
                 self?.refreshControl.endRefreshing()
                 self?.tableView.restore()
                 self?.tableView.reloadData()
+                self?.playVideoInMostVisibleCell()
             }
         }
         
@@ -143,10 +154,6 @@ extension FeedViewController: UITableViewDataSource {
 }
 
 extension FeedViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let feedCell = cell as? FeedViewCell else { return }
-//        feedCell.pause()
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.didSelectItem(atIndexPath: indexPath)
@@ -157,8 +164,8 @@ extension FeedViewController: UITableViewDelegate {
         defer {
             self.previousScrollViewHeight = scrollView.contentSize.height
             self.previousScrollOffset = scrollView.contentOffset.y
+            self.playVideoInMostVisibleCell()
         }
-
         let heightDiff = scrollView.contentSize.height - self.previousScrollViewHeight
         let scrollDiff = (scrollView.contentOffset.y - self.previousScrollOffset)
 
@@ -188,6 +195,29 @@ extension FeedViewController: UITableViewDelegate {
                 self.setScrollPosition(self.previousScrollOffset)
             }
         }
+    }
+    
+    func pauseAnyMedia() {
+        tableView.visibleCells.forEach { ($0 as? FeedViewCell)?.pauseMedia() }
+    }
+    
+    func playVideoInMostVisibleCell() {
+        var visibleCellsInfo: [(cell: FeedViewCell, visiblity: CGFloat)] = []
+        for cell in self.tableView.visibleCells {
+            if let videoCell = cell as? FeedViewCell {
+                let indexPath = tableView.indexPath(for: cell)!
+                let cellRect = tableView.rectForRow(at: indexPath)
+                let superview = tableView.superview!
+                let convertedRect = tableView.convert(cellRect, to: superview)
+                let intersectRect = tableView.frame.intersection(convertedRect)
+                let visiblePortion = intersectRect.height / cellRect.height
+                visibleCellsInfo.append((videoCell, visiblePortion))
+            }
+        }
+        visibleCellsInfo.sort(by: { $0.visiblity > $1.visiblity })
+        let mostVisibleCell = visibleCellsInfo.removeFirst()
+        visibleCellsInfo.forEach { $0.cell.pauseMedia()}
+        mostVisibleCell.cell.playMedia()
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -248,23 +278,3 @@ extension FeedViewController: UITableViewDelegate {
         // Do more based on percentage
     }
 }
-
-extension FeedViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//        indexPaths.forEach { indexPath in
-//            let index = indexPath.row % 9
-//            let urlStr = urls[index]
-//            guard map[urlStr] == nil else {
-//                return
-//            }
-//            guard let url = URL(string: urlStr) else { return }
-//            let asset = CachingPlayerItem(url: url, customFileExtension: "mp4")
-//            map[urlStr] = asset
-//            asset.download()
-//        }
-        
-    }
-}
-
-
-

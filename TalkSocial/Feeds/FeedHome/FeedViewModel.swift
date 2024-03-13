@@ -110,6 +110,7 @@ class FeedViewModelImpl: FeedViewModel {
             case .failure(let error):
                 self?.onError?("Failed to load more feeds. " + error.getMessage())
             }
+            
             DispatchQueue.main.async {
                 if let receivedModels {
                     self?.fetchedFeeds.append(contentsOf: receivedModels)

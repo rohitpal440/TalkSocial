@@ -30,6 +30,12 @@ struct FeedPostViewModelData {
     let thumbnailUrl: String?
     let time: Date?
     var isLiked: Bool?
+    lazy var asset: VividAsset? = {
+        guard let urlStr = self.videoUrl,
+              let url = URL(string: urlStr) else { return  nil }
+        let asset = VividAsset(url: url)
+        return asset
+    }()
 }
 
 
@@ -38,6 +44,7 @@ class FeedViewCell: UITableViewCell {
     @IBOutlet private weak var videoPlayerView: VideoView!
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     
+    @IBOutlet private weak var shareButton: UIControl!
     @IBOutlet private weak var commentCountLabel: UILabel!
     @IBOutlet private weak var commentButton: UIControl!
     
@@ -59,7 +66,10 @@ class FeedViewCell: UITableViewCell {
         userNameLabel.text = ""
         userNameLabel.font = .boldSystemFont(ofSize: 14)
         LikeButton.sendSubviewToBack(LikeButton.addBlurEffect(style: .regular))
-        commentButton.layer.applyShadow()
+    }
+    
+    func applyShadows() {
+        [commentButton, shareButton, userNameLabel, timeStampLabel].forEach { $0?.layer.applyShadow() }
     }
     
     
@@ -79,15 +89,31 @@ class FeedViewCell: UITableViewCell {
         populateCaptionAndComments(model: model)
         if let videoUrl = model.videoUrl,
             let url = URL(string: videoUrl) {
-//            configurePlayer(with: url)
-            videoPlayerView.setItem(url, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            var model = model
+            if let asset = model.asset  {
+                videoPlayerView.setItem(asset, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            } else {
+                videoPlayerView.setItem(url, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            }
+            
             videoPlayerView.isLoopEnabled = true
             videoPlayerView.videoGravity = .resizeAspectFill
-            videoPlayerView.play()
+
         } else {
             prepareForReuse()
         }
         self.layoutIfNeeded()
+        DispatchQueue.main.async {[weak self] in
+            self?.applyShadows()
+        }
+    }
+    
+    func playMedia() {
+        self.videoPlayerView.play()
+    }
+    
+    func pauseMedia() {
+        self.videoPlayerView.pause()
     }
     
 

@@ -12,6 +12,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet private weak var videoPlayerView: VideoView!
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     
+    @IBOutlet weak var shareButton: UIControl!
     @IBOutlet private weak var commentCountLabel: UILabel!
     @IBOutlet private weak var commentButton: UIControl!
     
@@ -40,10 +41,14 @@ class FeedDetailViewController: UIViewController {
         userNameLabel.text = ""
         userNameLabel.font = .boldSystemFont(ofSize: 14)
         LikeButton.sendSubviewToBack(LikeButton.addBlurEffect(style: .regular))
-        commentButton.layer.applyShadow()
         subscribeObservable()
         viewModel?.viewLoaded()
     }
+    
+    func applyShadows() {
+        [commentButton, shareButton, userNameLabel, timeStampLabel].forEach { $0?.layer.applyShadow() }
+    }
+    
     
     @IBAction func didTapRetry(_ sender: Any) {
         viewModel?.retryLoad()
@@ -59,7 +64,7 @@ class FeedDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.setupWith(model: postData)
                 self?.errorContainer.isHidden = true
-                
+                self?.applyShadows()
             }
         }
         
@@ -130,7 +135,13 @@ class FeedDetailViewController: UIViewController {
         captionLabel.set(text: model.caption)
         if let videoUrl = model.videoUrl,
             let url = URL(string: videoUrl) {
-            videoPlayerView.setItem(url, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            var model = model
+            if var asset = model.asset {
+                videoPlayerView.setItem(asset, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            } else {
+                videoPlayerView.setItem(url, thumbnailUrl: URL(string: model.thumbnailUrl ?? ""))
+            }
+            
             videoPlayerView.isLoopEnabled = true
             videoPlayerView.playerLayer?.videoGravity = .resizeAspectFill
             videoPlayerView.play()
